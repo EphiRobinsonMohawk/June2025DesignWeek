@@ -7,35 +7,34 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    //OUR VARIABLES 
+    public float chargeMeter;
+    public float chargeSpeed;
+
+
+
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
     private Rigidbody2D rb2d;
     private Animator anim;
     private SpriteRenderer sr;
-
     //float = floating point number, i.e., it has decimals.
     public float moveSpeed = 8f;
-
     //Jump stuff
     [Header("Jump Things")] //This adds a text header above a section
     public float jumpHeight = 8f;
     public float fallMultiplier = 5f;   //Scalar to increase fall speed
     public float lowJumpMultiplier = 1.5f;
     //Low jump multiplier for tapping jump vs holding jump
-
     //Coyote time AKA "ledge forgiveness"
     public float coyoteTimeMax = 0.25f;
     public float coyoteTime = 0;
-
     //Bool to check if the player is on the ground and a LayerMask
     public bool isGrounded = false;
     public LayerMask groundLayer;   //List of layers. There are 5 by default
-
     public Transform feet;  //Feet Transform.
     public float groundCheckRay = 0.25f;
-
     //Transform for starting location.
     private Vector3 startingLocation;
-
     public bool dead = false;
     // Start is called before the first frame update
     void Start()
@@ -44,6 +43,7 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr =   GetComponent<SpriteRenderer>();
+        chargeMeter = 0;
 
         //Coyote time is reset by default on Start
         coyoteTime = coyoteTimeMax;
@@ -151,15 +151,12 @@ public class PlayerController : MonoBehaviour
             //Alternate jump method is to use AddForce
             //rb2d.AddForce(Vector2.up * jumpHeight * 50, ForceMode2D.Impulse);
         }
-
         //Speed up the descent
         if (rb2d.velocity.y < 0)
         {
             //Add to the velocity by using gravity and our multiplier
             rb2d.velocity += Vector2.up * Physics2D.gravity
                 * (fallMultiplier) * Time.deltaTime;
-
-            
             //This is multipled by deltaTime to scale by the framerate
         } 
         //If the rigidbody is going upward and the spacebar is not being pressed
@@ -180,6 +177,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
+
+
     //Built-in function to draw debug elements such as lines, wire spheres and cubes
     private void OnDrawGizmos()
     {
@@ -191,7 +192,6 @@ public class PlayerController : MonoBehaviour
         {
             Gizmos.color = Color.white;
         }
-
         //This is not actually associated with our Raycast, but uses the same math
         Gizmos.DrawRay(feet.position, Vector2.down * groundCheckRay);
     }
@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //"Pick up" the item
-        if (collision.gameObject.name == "WateringCan")
+        if (collision.gameObject.name == "Battery")
         {
             //You got the watering can!
             //Pick up logic goes here
@@ -207,6 +207,7 @@ public class PlayerController : MonoBehaviour
             //Destroy the thing you collided with
             //If the brackets are empty, then it would Destroy this object. i.e., the player
             Destroy(collision.gameObject);
+            AddCharge();
         }
 
         //If the player collides with a gameObject with the tag platform
@@ -216,42 +217,17 @@ public class PlayerController : MonoBehaviour
             transform.parent = collision.gameObject.transform;
         }
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ouch"))
-        {
-            dead = true;
-            anim.Play("playerDeath");
-            //anim.SetBool("isJumping", false);
-            //anim.SetBool("ded", true);
-        }
-    }
-
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         //If the player collides with a gameObject with the tag platform
-        if (collision.gameObject.tag == "Platform" && transform.parent != null)
+        if (collision.gameObject.tag == "Platform" && transform.parent != null) //j
         {
             //Remove the parent object
             transform.parent = null;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //If the object you collided with is on the layer "Ouch"
-        //Play the animation called "playerDeath"
-        //We do not need transitions for this animation, because YOU CANNOT ESCAPE DEATH
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ouch"))
-        {
-   
-            anim.Play("playerDeath");
-            //anim.SetBool("isJumping", false);
-            //anim.SetBool("ded", true);
-        }
-    }
-
+    
     //public functions are like public variables: they are visible in the editor
     //and can be accessed by other scripts.
     public void Death()
@@ -264,5 +240,10 @@ public class PlayerController : MonoBehaviour
 
         //This can also be used to display variables
         //Debug.Log(variableName);
+    }
+
+    public void AddCharge()
+    {
+    chargeMeter += chargeSpeed;
     }
 }
