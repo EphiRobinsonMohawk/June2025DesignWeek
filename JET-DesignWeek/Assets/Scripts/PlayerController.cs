@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //OUR VARIABLES 
-    public float chargeMeter;
+    public float chargeMeter = 75;
     public float chargeSpeed;
+    public float chargeDecay;
 
 
 
@@ -43,7 +44,6 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr =   GetComponent<SpriteRenderer>();
-        chargeMeter = 0;
 
         //Coyote time is reset by default on Start
         coyoteTime = coyoteTimeMax;
@@ -55,6 +55,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Decrease charge when charge is above 0
+        if (chargeMeter > 0)
+        {
+            chargeMeter -= chargeDecay * Time.deltaTime;
+        }
+        //Execute death code when charge is less than 1
+        if (chargeMeter < 1)
+        {
+            Death();
+        }
         //Local float variable for input
         //Unity has a built-in Input system with default "axes"
         //The axis system is at minimum -1, at maximum +1 and everything
@@ -237,6 +247,7 @@ public class PlayerController : MonoBehaviour
         dead = false;
         //Debug.Log will display custom messages in the Console
         Debug.Log("YOU DED");
+        chargeMeter = 75;
 
         //This can also be used to display variables
         //Debug.Log(variableName);
