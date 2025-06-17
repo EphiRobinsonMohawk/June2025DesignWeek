@@ -8,9 +8,12 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //OUR VARIABLES 
-    public float chargeMeter = 75;
-    public float chargeSpeed;
+    public float chargeMeter;
     public float chargeDecay;
+    public float chargeAmmount;
+    public float chargeStart;
+    public bool isCharging;
+    public float chargeSpeed;
 
 
 
@@ -40,6 +43,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //OUR STUFF
+        chargeMeter = chargeStart;
+
         //Initialize the variables
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -65,6 +71,13 @@ public class PlayerController : MonoBehaviour
         {
             Death();
         }
+        //Add charge when player is on charging pad
+        if (isCharging)
+        {
+            chargeMeter += chargeSpeed * Time.deltaTime;
+        }
+
+
         //Local float variable for input
         //Unity has a built-in Input system with default "axes"
         //The axis system is at minimum -1, at maximum +1 and everything
@@ -220,6 +233,11 @@ public class PlayerController : MonoBehaviour
             AddCharge();
         }
 
+        if (collision.gameObject.name == "ChargePad")
+        {
+            isCharging = true;
+        }
+
         //If the player collides with a gameObject with the tag platform
         if (collision.gameObject.tag == "Platform" && transform.parent == null)
         {
@@ -235,6 +253,10 @@ public class PlayerController : MonoBehaviour
         {
             //Remove the parent object
             transform.parent = null;
+        }
+        if (collision.gameObject.name == "ChargePad")
+        {
+            isCharging = false;
         }
     }
     
@@ -255,6 +277,6 @@ public class PlayerController : MonoBehaviour
 
     public void AddCharge()
     {
-    chargeMeter += chargeSpeed;
+    chargeMeter += chargeAmmount;
     }
 }

@@ -5200,7 +5200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945152662}
   - component: {fileID: 1945152661}
-  - component: {fileID: 1945152663}
+  - component: {fileID: 1945152665}
   m_Layer: 0
   m_Name: ChargePad
   m_TagString: Untagged
@@ -5275,7 +5275,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1945152663
+--- !u!61 &1945152665
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5307,7 +5307,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0018755794, y: 2.5119495}
+  m_Offset: {x: 0, y: 2.2225857}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5318,7 +5318,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1083678, y: 3.9099455}
+  m_Size: {x: 1, y: 4.3573093}
   m_EdgeRadius: 0
 --- !u!1 &2100154727
 GameObject:
@@ -5363,12 +5363,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 544421641480308339, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
       propertyPath: chargeDecay
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
       propertyPath: chargeSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
+      propertyPath: chargeStart
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
+      propertyPath: chargeAmmount
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7816701800795470383, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
