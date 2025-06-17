@@ -8,12 +8,25 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //OUR VARIABLES 
-    public float chargeMeter;
-    public float chargeDecay;
-    public float chargeAmmount;
-    public float chargeStart;
+    //Charge Meter Vars
+    [Tooltip("Charge Player Has:")]
+    public float chargeMeter; //charge player has
+    [Tooltip("Rate Of Charge Decay")]
+    public float chargeDecay; //rate of charge decay
+    [Tooltip("Charge Gained On Battery Pickup:")]
+    public float chargeAmmount; //charge per battery
+    [Tooltip("Charge Player Stats With:")]
+    public float chargeStart; //
+
+    //Chargepad Vars
     public bool isCharging;
     public float chargeSpeed;
+
+    //
+    public bool isDraining;
+    public float drainSpeed;
+
+
 
 
 
@@ -75,6 +88,11 @@ public class PlayerController : MonoBehaviour
         if (isCharging)
         {
             chargeMeter += chargeSpeed * Time.deltaTime;
+        }
+        if (isDraining)
+        {
+            chargeMeter -= drainSpeed * Time.deltaTime;
+
         }
 
 
@@ -237,6 +255,10 @@ public class PlayerController : MonoBehaviour
         {
             isCharging = true;
         }
+        if (collision.gameObject.name == "DrainPad")
+        {
+            isDraining = true;
+        }
 
         //If the player collides with a gameObject with the tag platform
         if (collision.gameObject.tag == "Platform" && transform.parent == null)
@@ -257,6 +279,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "ChargePad")
         {
             isCharging = false;
+        }
+        if (collision.gameObject.name == "DrainPad")
+        {
+            isDraining = false;
         }
     }
     
