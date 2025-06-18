@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject punchCircle;
     public float enemyKnockBack;
+    public Slider changeSlider;
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
     private Rigidbody2D rb2d;
@@ -119,6 +121,7 @@ public class PlayerController : MonoBehaviour
             jumpHeight = startJumpHeight;
             Debug.Log("Powerup Expired!");
         }
+        changeSlider.value = chargeMeter * 0.01f;
 
 
         //Local float variable for input
