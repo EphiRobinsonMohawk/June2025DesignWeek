@@ -186,8 +186,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c07788f45e25854fa5baa7841673a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chargeMeter: 0
+  chargeDecay: 0
+  chargeAmmount: 0
+  chargeStart: 0
+  isCharging: 0
+  chargeSpeed: 0
+  isDraining: 0
+  drainSpeed: 0
+  powerOn: 0
+  powerTimer: 0
+  powerTimerDuration: 5
+  cogsCollected: 0
+  punchCircle: {fileID: 0}
   moveSpeed: 8
+  startMoveSpeed: 8
   jumpHeight: 8
+  startJumpHeight: 8
   fallMultiplier: 5
   lowJumpMultiplier: 1.5
   coyoteTimeMax: 0.25
@@ -281,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8785626276132049561
 Transform:
   m_ObjectHideFlags: 0

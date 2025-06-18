@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public float powerTimerDuration = 5;
     public int cogsCollected;
 
+    public GameObject punchCircle;
+
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
     private Rigidbody2D rb2d;
@@ -180,9 +182,11 @@ public class PlayerController : MonoBehaviour
         if(hMovement < 0 && !dead)
         {
             sr.flipX = true;
+            punchCircle.transform.rotation = Quaternion.Euler(0, 180, 0);
         } else if (hMovement > 0 && !dead)
         {
             sr.flipX = false;
+            punchCircle.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
@@ -263,7 +267,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //"Pick up" the item
-        if (collision.gameObject.name == "Battery")
+        if (collision.gameObject.tag == "Battery")
         {
             Destroy(collision.gameObject);
             AddCharge();
@@ -317,7 +321,13 @@ public class PlayerController : MonoBehaviour
             isDraining = false;
         }
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Enemy")
+        Debug.Log("Enemy Hits Player");
+    }
+
     //public functions are like public variables: they are visible in the editor
     //and can be accessed by other scripts.
     public void Death()
