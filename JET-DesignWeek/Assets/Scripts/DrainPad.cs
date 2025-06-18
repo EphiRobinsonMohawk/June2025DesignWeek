@@ -17,6 +17,7 @@ public class DrainPad : MonoBehaviour
         {
             isDrained = true;
             door.GetComponent<BoxCollider2D>().enabled = false;
+            Debug.Log(door.name + "Opened!");
         }
         if (playerController.isDraining == true)
         {

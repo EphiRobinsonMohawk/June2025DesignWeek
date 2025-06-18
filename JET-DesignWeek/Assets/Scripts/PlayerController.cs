@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     public bool powerOn = false;
     public float powerTimer;
+    [Header("Duration of the powerup")]
+    public float powerTimerDuration = 5;
+    public int cogsCollected;
 
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
@@ -106,12 +109,13 @@ public class PlayerController : MonoBehaviour
             jumpHeight = 13;
             moveSpeed = 13;
         }
-        if (powerTimer > 5)
+        if (powerTimer > powerTimerDuration)
         {
             powerOn = false;
             powerTimer = 0;
             moveSpeed = startMoveSpeed;
             jumpHeight = startJumpHeight;
+            Debug.Log("Powerup Expired!");
         }
 
 
@@ -263,11 +267,20 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             AddCharge();
+            Debug.Log("Battery picked up, " + chargeAmmount + " charge added. You have "
+                + chargeMeter + "charge!");
         }
         if (collision.gameObject.name == "PowerUp")
         {
             Destroy(collision.gameObject);
             powerOn = true;
+            Debug.Log("Powerup Activated!");
+        }
+        if (collision.gameObject.name == "Cog")
+        {
+            Destroy(collision.gameObject);
+            cogsCollected++;
+            Debug.Log("Cog Collected, you have" + cogsCollected + "Cogs");
         }
 
         if (collision.gameObject.name == "ChargePad")
