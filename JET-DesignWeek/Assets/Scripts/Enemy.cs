@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     //Edge detection
     public Transform eyeballs;
     public LayerMask groundLayer;
-    public float groundCheckerLength = 5;
+    public float groundCheckerLength = 3;
     public bool atEdge;
 
     public bool facingRight = true;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     public EnemyState currentState = EnemyState.Walking;
 
     //Transform to store where the player is.
-    private Transform playerTransform;
+    //private Transform playerTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
         startingSpeed = speed;
 
         //Initialize the playerTransform by finding the player gameObject
-        playerTransform = GameObject.Find("Player").transform;
+        //playerTransform = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame

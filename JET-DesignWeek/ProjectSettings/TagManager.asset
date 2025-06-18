@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Battery
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
     public int cogsCollected;
 
     public GameObject punchCircle;
-    public float enemyKnockBack;
+    public float enemyKnockBack = 50;
+    public float enemyDamage;
     public Slider changeSlider;
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
@@ -327,7 +328,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
 
             float xDir = Mathf.Sign(transform.position.x - collision.transform.position.x);
@@ -336,7 +337,7 @@ public class PlayerController : MonoBehaviour
             rb2d.velocity = Vector2.zero;
 
             rb2d.AddForce(knockbackDir * enemyKnockBack *100, ForceMode2D.Force);
-            Debug.Log("Enemy Hits Player");
+            chargeMeter -= enemyDamage;
         }
     }
 
