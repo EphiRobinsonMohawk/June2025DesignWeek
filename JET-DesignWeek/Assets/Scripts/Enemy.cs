@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //public Rigidbody2D playerRB2D;
+    public Rigidbody2D playerRB2D;
     public GameObject battery;
 
     //Enemy variables are similar to a player!
@@ -52,9 +52,9 @@ public class Enemy : MonoBehaviour
                 Walking();
                 break;
 
-            case EnemyState.Idle:
+            /*case EnemyState.Idle:
                 Idle();
-                break;
+                break; */
 
             case EnemyState.Dying:
                 Dying();
@@ -96,13 +96,13 @@ public class Enemy : MonoBehaviour
 
         //Check when the player is within range
         //If the player is within 0.5 units of the enemy, switch to the idle state
-        if (Vector2.Distance(transform.position, playerTransform.position) < 1f)
+         /*if (Vector2.Distance(transform.position, playerTransform.position) < 1f)
         {
             currentState = EnemyState.Idle;
-        }
+        } */
     }
 
-    private void Idle()
+    /*private void Idle()
     {
         //Play the idle animation and set the vector's x to 0
         anim.Play("enemyIdle");
@@ -113,7 +113,7 @@ public class Enemy : MonoBehaviour
         {
             currentState = EnemyState.Walking;
         }
-    }
+    }*/
 
     public void Dying()
     {
@@ -135,11 +135,11 @@ public class Enemy : MonoBehaviour
             currentState = EnemyState.Dying;
         }
         //MY ATTEMPT AT KNOCKBACK CODE (FAIL)
-        /*if (collision.gameObject.name == "Player" && collision.gameObject.name != "PUNCH")
+        if (collision.gameObject.name == "Player" && collision.gameObject.name != "PUNCH")
         {
             playerRB2D.velocity = new Vector2(-100, playerRB2D.velocity.x);
             Debug.Log("Knock Back");
-        }*/
+        }
     }
 }
 
@@ -148,5 +148,5 @@ public class Enemy : MonoBehaviour
 //Enums are their own class
 public enum EnemyState
 {
-    Walking, Idle, Dying
+    Walking, Dying //, Idle
 }
