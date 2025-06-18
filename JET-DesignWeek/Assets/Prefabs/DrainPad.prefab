@@ -147,4 +147,4 @@ MonoBehaviour:
   drained: 0
   isDrained: 0
   door: {fileID: 0}
-  playerController: {fileID: 0}
+  playerController: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
