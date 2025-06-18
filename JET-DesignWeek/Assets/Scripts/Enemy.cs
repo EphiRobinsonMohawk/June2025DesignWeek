@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Rigidbody2D playerRB2D;
     public GameObject battery;
 
     //Enemy variables are similar to a player!
@@ -132,13 +131,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.name == "PUNCH")
         {
+            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
             currentState = EnemyState.Dying;
-        }
-        //MY ATTEMPT AT KNOCKBACK CODE (FAIL)
-        if (collision.gameObject.name == "Player" && collision.gameObject.name != "PUNCH")
-        {
-            playerRB2D.velocity = new Vector2(-100, playerRB2D.velocity.x);
-            Debug.Log("Knock Back");
         }
     }
 }

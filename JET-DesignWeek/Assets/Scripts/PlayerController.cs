@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     public int cogsCollected;
 
     public GameObject punchCircle;
-
+    public float enemyKnockBack;
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
     private Rigidbody2D rb2d;
@@ -284,7 +284,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             cogsCollected++;
-            Debug.Log("Cog Collected, you have" + cogsCollected + "Cogs");
+            Debug.Log("Cog Collected, You Have " + cogsCollected + " Cogs");
         }
 
         if (collision.gameObject.name == "ChargePad")
@@ -325,7 +325,16 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Enemy")
-        Debug.Log("Enemy Hits Player");
+        {
+
+            float xDir = Mathf.Sign(transform.position.x - collision.transform.position.x);
+
+            Vector2 knockbackDir = new Vector2(xDir, 0f);
+            rb2d.velocity = Vector2.zero;
+
+            rb2d.AddForce(knockbackDir * enemyKnockBack *100, ForceMode2D.Force);
+            Debug.Log("Enemy Hits Player");
+        }
     }
 
     //public functions are like public variables: they are visible in the editor
