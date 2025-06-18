@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    //public Rigidbody2D playerRB2D;
+    public GameObject battery;
+
     //Enemy variables are similar to a player!
     private Animator anim;
     public float speed = 2.5f;
     private float startingSpeed;
     private Rigidbody2D rb2d;
-    public GameObject battery;
+
 
     //Edge detection
     public Transform eyeballs;
@@ -131,6 +134,12 @@ public class Enemy : MonoBehaviour
         {
             currentState = EnemyState.Dying;
         }
+        //MY ATTEMPT AT KNOCKBACK CODE (FAIL)
+        /*if (collision.gameObject.name == "Player" && collision.gameObject.name != "PUNCH")
+        {
+            playerRB2D.velocity = new Vector2(-100, playerRB2D.velocity.x);
+            Debug.Log("Knock Back");
+        }*/
     }
 }
 

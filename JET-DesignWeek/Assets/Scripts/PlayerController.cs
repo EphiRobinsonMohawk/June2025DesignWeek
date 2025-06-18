@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    //OUR VARIABLES 
-    //Charge Meter Vars
+    [Header("Charge Variables")] //This adds a text header above a section
     [Tooltip("Charge Player Has:")]
     public float chargeMeter; //charge player has
     [Tooltip("Rate Of Charge Decay")]
@@ -17,17 +16,20 @@ public class PlayerController : MonoBehaviour
     public float chargeAmmount; //charge per battery
     [Tooltip("Charge Player Stats With:")]
     public float chargeStart; //
-
     //Chargepad Vars
+    [Tooltip("Is Player On Charge Pad")]
     public bool isCharging;
+    [Tooltip("How Fast Does Charge Pad Charge The Player")]
     public float chargeSpeed;
-
     //
+    [Tooltip("Isd Player On Drain Pad")]
     public bool isDraining;
+    [Tooltip("How Fast Does Drain Pad Drain")]
     public float drainSpeed;
+    [Header("Player Things")]
 
-
-
+    public bool powerOn = false;
+    public float powerTimer;
 
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
@@ -35,10 +37,12 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
     //float = floating point number, i.e., it has decimals.
-    public float moveSpeed = 8f;
+    public float moveSpeed;
+    public float startMoveSpeed = 8f;
     //Jump stuff
     [Header("Jump Things")] //This adds a text header above a section
-    public float jumpHeight = 8f;
+    public float jumpHeight;
+    public float startJumpHeight = 8f;
     public float fallMultiplier = 5f;   //Scalar to increase fall speed
     public float lowJumpMultiplier = 1.5f;
     //Low jump multiplier for tapping jump vs holding jump
@@ -58,6 +62,8 @@ public class PlayerController : MonoBehaviour
     {
         //OUR STUFF
         chargeMeter = chargeStart;
+        jumpHeight = startJumpHeight;
+        moveSpeed = startMoveSpeed;
 
         //Initialize the variables
         rb2d = GetComponent<Rigidbody2D>();
@@ -93,6 +99,19 @@ public class PlayerController : MonoBehaviour
         {
             chargeMeter -= drainSpeed * Time.deltaTime;
 
+        }
+        if (powerOn)
+        {
+            powerTimer += Time.deltaTime;
+            jumpHeight = 13;
+            moveSpeed = 13;
+        }
+        if (powerTimer > 5)
+        {
+            powerOn = false;
+            powerTimer = 0;
+            moveSpeed = startMoveSpeed;
+            jumpHeight = startJumpHeight;
         }
 
 
@@ -242,13 +261,13 @@ public class PlayerController : MonoBehaviour
         //"Pick up" the item
         if (collision.gameObject.name == "Battery")
         {
-            //You got the watering can!
-            //Pick up logic goes here
-
-            //Destroy the thing you collided with
-            //If the brackets are empty, then it would Destroy this object. i.e., the player
             Destroy(collision.gameObject);
             AddCharge();
+        }
+        if (collision.gameObject.name == "PowerUp")
+        {
+            Destroy(collision.gameObject);
+            powerOn = true;
         }
 
         if (collision.gameObject.name == "ChargePad")
@@ -261,7 +280,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //If the player collides with a gameObject with the tag platform
-        if (collision.gameObject.tag == "Platform" && transform.parent == null)
+        if (collision.gameObject.tag == "Platform" /* && transform.parent == null*/)
         {
             //Child this object to the platform object
             transform.parent = collision.gameObject.transform;
@@ -271,7 +290,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //If the player collides with a gameObject with the tag platform
-        if (collision.gameObject.tag == "Platform" && transform.parent != null) //j
+        if (collision.gameObject.tag == "Platform"/* && transform.parent != null*/) //j
         {
             //Remove the parent object
             transform.parent = null;
