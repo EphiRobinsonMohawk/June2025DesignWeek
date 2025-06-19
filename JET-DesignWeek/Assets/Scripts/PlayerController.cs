@@ -40,6 +40,12 @@ public class PlayerController : MonoBehaviour
     public float enemyDamage;
     public Slider changeSlider;
 
+
+    [Header("Player Things")]
+    public AudioSource pAudioSource;
+    public AudioClip playerDie;
+    public bool hasPlayed;
+
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -98,6 +104,12 @@ public class PlayerController : MonoBehaviour
         {
             dead = true;
             anim.Play("playerDeath");
+            if (!hasPlayed)
+            {
+                pAudioSource.PlayOneShot(playerDie);
+                hasPlayed = true;
+            }
+            
         }
         //Add charge when player is on charging pad
         if (isCharging)
@@ -363,7 +375,9 @@ public class PlayerController : MonoBehaviour
 
         //This can also be used to display variables
         //Debug.Log(variableName);
+        hasPlayed = false;
         SceneManager.LoadScene("Game");
+
     }
 
     public void AddCharge()
