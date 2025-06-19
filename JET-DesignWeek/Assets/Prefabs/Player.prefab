@@ -199,6 +199,7 @@ MonoBehaviour:
   cogsCollected: 0
   punchCircle: {fileID: 6517262280993674217}
   enemyKnockBack: 0
+  enemyDamage: 0
   changeSlider: {fileID: 0}
   moveSpeed: 0
   startMoveSpeed: 5.5
@@ -256,6 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8785626276132049561}
   - component: {fileID: 8702799697562611651}
+  - component: {fileID: 534017804156871714}
   m_Layer: 0
   m_Name: PUNCH
   m_TagString: Untagged
@@ -272,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 6517262280993674217}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.068, z: 0}
+  m_LocalPosition: {x: 0.376, y: 0.068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,6 +312,41 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.51, y: 0}
+  m_Offset: {x: 0.5669016, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.09309834
+--- !u!70 &534017804156871714
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517262280993674217}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17565109, y: -0.019793807}
+  m_Size: {x: 1.000004, y: 0.2578101}
+  m_Direction: 1
