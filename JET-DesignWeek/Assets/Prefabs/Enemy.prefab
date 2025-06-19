@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battery: {fileID: 4018824961748094420, guid: 1b679e1178125b642acadc76b119fa91, type: 3}
-  speed: 2.5
+  speed: 1.5
   eyeballs: {fileID: 7842731257014045469}
   groundLayer:
     serializedVersion: 2
