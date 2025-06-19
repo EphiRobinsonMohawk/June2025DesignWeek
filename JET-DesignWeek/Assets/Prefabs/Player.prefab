@@ -213,7 +213,7 @@ MonoBehaviour:
   playerKnockback: {fileID: 8300000, guid: a238e82bff8a7475f8ec99a93b0452a7, type: 3}
   playerPunch: {fileID: 8300000, guid: 16ca62ab035f74c80b8e74616e02503f, type: 3}
   batteryPickUp: {fileID: 8300000, guid: 384c5ab46f2e44ab9a78b65941ac7edb, type: 3}
-  charging: {fileID: 8300000, guid: b092919ec01114c41b5c4e7bfd44b9f2, type: 3}
+  charging: {fileID: 8300000, guid: 26023c65d9ad7a542bb25bb3b29e00dd, type: 3}
   draining: {fileID: 8300000, guid: 201b48c585bd2b8489ed847750d28ee5, type: 3}
   powerUp: {fileID: 8300000, guid: 328c9fe4f2421e647a970c900aca9f87, type: 3}
   hasPlayed: 0
