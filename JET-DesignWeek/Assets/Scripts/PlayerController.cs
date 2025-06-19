@@ -278,24 +278,24 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Battery picked up, " + chargeAmmount + " charge added. You have "
                 + chargeMeter + "charge!");
         }
-        if (collision.gameObject.name == "PowerUp")
+        if (collision.gameObject.tag == "PowerUp")
         {
             Destroy(collision.gameObject);
             powerOn = true;
             Debug.Log("Powerup Activated!");
         }
-        if (collision.gameObject.name == "Cog")
+        if (collision.gameObject.tag == "Cog")
         {
             Destroy(collision.gameObject);
             cogsCollected++;
             Debug.Log("Cog Collected, You Have " + cogsCollected + " Cogs");
         }
 
-        if (collision.gameObject.name == "ChargePad")
+        if (collision.gameObject.tag == "ChargePad")
         {
             isCharging = true;
         }
-        if (collision.gameObject.name == "DrainPad")
+        if (collision.gameObject.tag == "DrainPad")
         {
             isDraining = true;
         }
@@ -316,11 +316,11 @@ public class PlayerController : MonoBehaviour
             //Remove the parent object
             transform.parent = null;
         }
-        if (collision.gameObject.name == "ChargePad")
+        if (collision.gameObject.tag == "ChargePad")
         {
             isCharging = false;
         }
-        if (collision.gameObject.name == "DrainPad")
+        if (collision.gameObject.tag == "DrainPad")
         {
             isDraining = false;
         }

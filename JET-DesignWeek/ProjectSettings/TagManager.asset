@@ -7,6 +7,10 @@ TagManager:
   - Platform
   - Battery
   - Enemy
+  - DrainPad
+  - ChargePad
+  - PowerUp
+  - Cog
   layers:
   - Default
   - TransparentFX
