@@ -363,6 +363,7 @@ public class PlayerController : MonoBehaviour
 
         //This can also be used to display variables
         //Debug.Log(variableName);
+        SceneManager.LoadScene("Game");
     }
 
     public void AddCharge()

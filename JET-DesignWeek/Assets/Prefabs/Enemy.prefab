@@ -218,6 +218,7 @@ MonoBehaviour:
   battery: {fileID: 4018824961748094420, guid: 1b679e1178125b642acadc76b119fa91, type: 3}
   thisCollider: {fileID: 8499130133528416939}
   speed: 1.5
+  playerController: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
   eyeballs: {fileID: 7842731257014045469}
   groundLayer:
     serializedVersion: 2

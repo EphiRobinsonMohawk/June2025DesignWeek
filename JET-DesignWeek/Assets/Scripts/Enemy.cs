@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public float speed = 2.5f;
     private float startingSpeed;
     private Rigidbody2D rb2d;
-
+    public PlayerController playerController;
 
     //Edge detection
     public Transform eyeballs;
@@ -58,6 +58,11 @@ public class Enemy : MonoBehaviour
             case EnemyState.Dying:
                 Dying();
                 break;
+        }
+
+        if (playerController.dead == true)
+        {
+            Destroy(gameObject);
         }
     }
 
