@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public AudioSource eAudioSource;
+    public AudioClip enemyDie;
+    public bool hasPlayed;
+
     public GameObject battery;
     public Collider2D thisCollider;
     //Enemy variables are similar to a player!
@@ -30,6 +35,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hasPlayed = false;
         //Initialize the variables
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -122,12 +128,18 @@ public class Enemy : MonoBehaviour
     public void Dying()
     {
         thisCollider.enabled = false;
+        if (!hasPlayed)
+        {
+            eAudioSource.PlayOneShot(enemyDie);
+            hasPlayed = true;
+        }
         anim.Play("enemyDeath");    //Play the death animation
     }
 
     //This gets triggered by the animation event.
     public void Dead()
     {
+
         Destroy(gameObject);
         Instantiate(battery, this.transform.position, Quaternion.identity);
     }

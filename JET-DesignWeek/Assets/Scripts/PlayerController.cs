@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
     [Header("Player Things")]
     public AudioSource pAudioSource;
     public AudioClip playerDie;
+    public AudioClip playerJump;
+    public AudioClip playerMove;
+    public AudioClip playerKnockback;
+    public AudioClip playerPunch;
+    public AudioClip batteryPickUp;
     public bool hasPlayed;
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
@@ -162,6 +167,8 @@ public class PlayerController : MonoBehaviour
         {
             if (!dead)
             {
+
+                pAudioSource.PlayOneShot(playerPunch);
                 anim.SetTrigger("attack");  //Triggers are "play once and then stop"
             }
         }
@@ -238,6 +245,7 @@ public class PlayerController : MonoBehaviour
         //If coyoteTime is still active, and the players hit the jump button
         if (coyoteTime > 0 && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && !dead)
         {
+            pAudioSource.PlayOneShot(playerJump);
             //Add the jump value to the rigidbody2D velocity
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpHeight);
 
@@ -296,6 +304,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             AddCharge();
+            pAudioSource.PlayOneShot(batteryPickUp);
             Debug.Log("Battery picked up, " + chargeAmmount + " charge added. You have "
                 + chargeMeter + "charge!");
         }
@@ -357,6 +366,7 @@ public class PlayerController : MonoBehaviour
             Vector2 knockbackDir = new Vector2(xDir, 0f);
             rb2d.velocity = Vector2.zero;
 
+            pAudioSource.PlayOneShot(playerKnockback);
             rb2d.AddForce(knockbackDir * enemyKnockBack *100, ForceMode2D.Force);
             chargeMeter -= enemyDamage;
         }

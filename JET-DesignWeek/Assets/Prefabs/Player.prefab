@@ -191,7 +191,7 @@ MonoBehaviour:
   chargeAmmount: 15
   chargeStart: 75
   isCharging: 0
-  chargeSpeed: 6
+  chargeSpeed: 12
   isDraining: 0
   drainSpeed: 3
   powerOn: 0
@@ -199,14 +199,21 @@ MonoBehaviour:
   powerTimerDuration: 5
   cogsCollected: 0
   punchCircle: {fileID: 6517262280993674217}
-  enemyKnockBack: 0
-  enemyDamage: 0
+  enemyKnockBack: 50
+  enemyDamage: 3
   changeSlider: {fileID: 0}
+  pAudioSource: {fileID: 296387614820045315}
   playerDie: {fileID: 8300000, guid: 62259eff3d29446019736674ccf4529a, type: 3}
+  playerJump: {fileID: 8300000, guid: d083de50638d04162b2c3ca4d76a71bd, type: 3}
+  playerMove: {fileID: 8300000, guid: 88292d74a47d94370aa2d3e1f28a14f1, type: 3}
+  playerKnockback: {fileID: 8300000, guid: a238e82bff8a7475f8ec99a93b0452a7, type: 3}
+  playerPunch: {fileID: 8300000, guid: 16ca62ab035f74c80b8e74616e02503f, type: 3}
+  batteryPickUp: {fileID: 8300000, guid: 384c5ab46f2e44ab9a78b65941ac7edb, type: 3}
+  hasPlayed: 0
   moveSpeed: 0
   startMoveSpeed: 5.5
   jumpHeight: 0
-  startJumpHeight: 7.5
+  startJumpHeight: 8.2
   fallMultiplier: 5
   lowJumpMultiplier: 3
   coyoteTimeMax: 0.25
@@ -361,7 +368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8785626276132049561
 Transform:
   m_ObjectHideFlags: 0
