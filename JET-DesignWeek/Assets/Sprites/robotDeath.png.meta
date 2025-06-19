@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 249bdc1ed84ff2b479d5cf23e9067c54
+guid: 834a361b4b4b2b447a8cfb584dd5d52d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robotJump_0
+      name: robotDeath_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,20 +118,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c58eabcf713b2354ab2d0ab388fba844
-      internalID: 1601242249
+      spriteID: d9a6c957b7e45f040b12bd3ce68ce653
+      internalID: -1481398580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_1
+      name: robotDeath_1
       rect:
         serializedVersion: 2
         x: 128
@@ -139,20 +139,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f57f22684e196fc4db65544a5e1e5ab2
-      internalID: -780730597
+      spriteID: df0bf431e2075e04e9ffdc12e69d66bd
+      internalID: -1771099393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_2
+      name: robotDeath_2
       rect:
         serializedVersion: 2
         x: 256
@@ -160,20 +160,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e32f4fe8a412adb46b69741a475c4018
-      internalID: 1203215414
+      spriteID: 7f561655da41bb44ab12902154cb67aa
+      internalID: 1761820801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_3
+      name: robotDeath_3
       rect:
         serializedVersion: 2
         x: 384
@@ -181,20 +181,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af1ac41567751a94693c14246ab6f729
-      internalID: -76789924
+      spriteID: 013182cc0aee99c4f93da92ba359d5ed
+      internalID: -834574119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_4
+      name: robotDeath_4
       rect:
         serializedVersion: 2
         x: 512
@@ -202,20 +202,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e54b0694d4fb5134a97482aeb559fc87
-      internalID: 413610954
+      spriteID: 2f3d462bd2cee5f43908f463c21d67f5
+      internalID: -2000145884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_5
+      name: robotDeath_5
       rect:
         serializedVersion: 2
         x: 640
@@ -223,20 +223,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c8e8ce0b2f591418640c0f31c3c800
-      internalID: 663719875
+      spriteID: 1750c5601a21feb47bf844556f05cd49
+      internalID: -1766919703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_6
+      name: robotDeath_6
       rect:
         serializedVersion: 2
         x: 768
@@ -244,20 +244,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12c339eb63b3bb546abe42d2af06a8c4
-      internalID: 524917087
+      spriteID: a8e8cb9820820ef49af342f730460bd8
+      internalID: 820318486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_7
+      name: robotDeath_7
       rect:
         serializedVersion: 2
         x: 896
@@ -265,20 +265,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e641d623c13b54f46aca749380d34f12
-      internalID: 706984028
+      spriteID: cce5fc0a9e475bd419e24a40c4db73ed
+      internalID: 1430369516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_8
+      name: robotDeath_8
       rect:
         serializedVersion: 2
         x: 1024
@@ -286,20 +286,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd0cb8dbf0a1edb439a80d63dff311fb
-      internalID: 1238223770
+      spriteID: b0dbcfbc77f6a5242806bbe77fe48c04
+      internalID: -884358363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_9
+      name: robotDeath_9
       rect:
         serializedVersion: 2
         x: 1152
@@ -307,20 +307,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b5604f8b91abcf4b9bc91c955eaf2a6
-      internalID: -342220441
+      spriteID: 684a1bd1b83b41448b202d1187ba05f2
+      internalID: -1287542627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_10
+      name: robotDeath_10
       rect:
         serializedVersion: 2
         x: 1280
@@ -328,20 +328,20 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5980e4dc6e8fa8846a727403fc140fd1
-      internalID: -133475194
+      spriteID: fcb359c05d170cd4fafda7ec84ce1748
+      internalID: 543405685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_11
+      name: robotDeath_11
       rect:
         serializedVersion: 2
         x: 1408
@@ -349,25 +349,46 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e5b44dc99d3f2940aafd0fae46dac6a
-      internalID: -2040265184
+      spriteID: dad6e73124a9d5143bdb42ef9ef04247
+      internalID: -1464207515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotJump_12
+      name: robotDeath_12
       rect:
         serializedVersion: 2
         x: 1536
         y: 0
         width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5f4a72d8673ac469ef37acf0f4b617
+      internalID: 309099134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robotDeath_13
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 0
+        width: 126
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -376,8 +397,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1027e2dc0cf5d584aad2365c430a03bf
-      internalID: -466047917
+      spriteID: de9d7be3151ab814383bca7d6b3dd5da
+      internalID: -836065015
       vertices: []
       indices: 
       edges: []
@@ -393,19 +414,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robotJump_0: 1601242249
-      robotJump_1: -780730597
-      robotJump_10: -133475194
-      robotJump_11: -2040265184
-      robotJump_12: -466047917
-      robotJump_2: 1203215414
-      robotJump_3: -76789924
-      robotJump_4: 413610954
-      robotJump_5: 663719875
-      robotJump_6: 524917087
-      robotJump_7: 706984028
-      robotJump_8: 1238223770
-      robotJump_9: -342220441
+      robotDeath_0: -1481398580
+      robotDeath_1: -1771099393
+      robotDeath_10: 543405685
+      robotDeath_11: -1464207515
+      robotDeath_12: 309099134
+      robotDeath_13: -836065015
+      robotDeath_2: 1761820801
+      robotDeath_3: -834574119
+      robotDeath_4: -2000145884
+      robotDeath_5: -1766919703
+      robotDeath_6: 820318486
+      robotDeath_7: 1430369516
+      robotDeath_8: -884358363
+      robotDeath_9: -1287542627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
