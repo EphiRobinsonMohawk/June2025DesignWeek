@@ -346,9 +346,13 @@ public class PlayerController : MonoBehaviour
             }*/
             isDraining = true;
         }
+        if (collision.gameObject.tag == "Win")
+        {
+            SceneManager.LoadScene("Win");
+        }
 
-        //If the player collides with a gameObject with the tag platform
-        if (collision.gameObject.tag == "Platform" /* && transform.parent == null*/)
+            //If the player collides with a gameObject with the tag platform
+            if (collision.gameObject.tag == "Platform" /* && transform.parent == null*/)
         {
             //Child this object to the platform object
             transform.parent = collision.gameObject.transform;
