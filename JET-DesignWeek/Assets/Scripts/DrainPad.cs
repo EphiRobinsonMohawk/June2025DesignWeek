@@ -12,8 +12,9 @@ public class DrainPad : MonoBehaviour
 
     public GameObject door;
     public PlayerController playerController;
-    public AudioSource dAudioSource;
+    public AudioSource drAudioSource;
     public AudioClip doorOpen;
+    public Animator anim;
 
     void Start()
     {
@@ -27,9 +28,11 @@ public class DrainPad : MonoBehaviour
             door.GetComponent<BoxCollider2D>().enabled = false;
             if (!hasPlayed)
             {
-                dAudioSource.PlayOneShot(doorOpen);
+                drAudioSource.PlayOneShot(doorOpen);
                 hasPlayed = true;
             }
+
+            anim.Play("doorOpening");
             Debug.Log(door.name + "Opened!");
         }
         if (playerController.isDraining == true)

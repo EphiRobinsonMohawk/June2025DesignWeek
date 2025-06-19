@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c07788f45e25854fa5baa7841673a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeMeter: 0
+  chargeMeter: 75
   chargeDecay: 3
   chargeAmmount: 15
   chargeStart: 75
@@ -209,6 +209,8 @@ MonoBehaviour:
   playerKnockback: {fileID: 8300000, guid: a238e82bff8a7475f8ec99a93b0452a7, type: 3}
   playerPunch: {fileID: 8300000, guid: 16ca62ab035f74c80b8e74616e02503f, type: 3}
   batteryPickUp: {fileID: 8300000, guid: 384c5ab46f2e44ab9a78b65941ac7edb, type: 3}
+  charging: {fileID: 8300000, guid: b092919ec01114c41b5c4e7bfd44b9f2, type: 3}
+  draining: {fileID: 8300000, guid: 201b48c585bd2b8489ed847750d28ee5, type: 3}
   hasPlayed: 0
   moveSpeed: 0
   startMoveSpeed: 5.5

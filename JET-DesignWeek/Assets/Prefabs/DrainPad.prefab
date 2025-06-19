@@ -150,8 +150,9 @@ MonoBehaviour:
   isDrained: 0
   door: {fileID: 0}
   playerController: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
-  dAudioSource: {fileID: 6300422363703113799}
+  drAudioSource: {fileID: 6300422363703113799}
   doorOpen: {fileID: 8300000, guid: dfdee4538b552469691625ed5a6fdd39, type: 3}
+  anim: {fileID: 0}
 --- !u!82 &6300422363703113799
 AudioSource:
   m_ObjectHideFlags: 0

@@ -43,12 +43,17 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Things")]
     public AudioSource pAudioSource;
+    public AudioSource cAudioSource;
+    public AudioSource dAudioSource;
     public AudioClip playerDie;
     public AudioClip playerJump;
     public AudioClip playerMove;
     public AudioClip playerKnockback;
     public AudioClip playerPunch;
     public AudioClip batteryPickUp;
+    public AudioClip charging;
+    public AudioClip draining;
+    public AudioClip powerUp;
     public bool hasPlayed;
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
@@ -310,6 +315,8 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "PowerUp")
         {
+
+            pAudioSource.PlayOneShot(powerUp);
             Destroy(collision.gameObject);
             powerOn = true;
             Debug.Log("Powerup Activated!");
@@ -323,10 +330,18 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "ChargePad")
         {
+            if (!cAudioSource.isPlaying)
+            {
+                cAudioSource.Play();
+            }
             isCharging = true;
         }
         if (collision.gameObject.tag == "DrainPad")
         {
+            if (!dAudioSource.isPlaying)
+            {
+                dAudioSource.Play();
+            }
             isDraining = true;
         }
 
@@ -348,10 +363,18 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "ChargePad")
         {
+            if (cAudioSource.isPlaying)
+            {
+                cAudioSource.Stop();
+            }
             isCharging = false;
         }
         if (collision.gameObject.tag == "DrainPad")
         {
+            if (dAudioSource.isPlaying)
+            {
+                dAudioSource.Stop();
+            }
             isDraining = false;
         }
     }
