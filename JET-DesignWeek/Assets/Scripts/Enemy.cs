@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject battery;
-
+    public Collider2D thisCollider;
     //Enemy variables are similar to a player!
     private Animator anim;
     public float speed = 2.5f;
@@ -116,6 +116,7 @@ public class Enemy : MonoBehaviour
 
     public void Dying()
     {
+        thisCollider.enabled = false;
         anim.Play("enemyDeath");    //Play the death animation
     }
 
