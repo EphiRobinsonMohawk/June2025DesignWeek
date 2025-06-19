@@ -24944,6 +24944,10 @@ PrefabInstance:
       propertyPath: enemyKnockBack
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3136938137890432847, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6517262280993674217, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
       propertyPath: m_IsActive
       value: 0
