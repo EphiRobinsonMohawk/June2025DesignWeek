@@ -28,11 +28,12 @@ public class DrainPad : MonoBehaviour
             door.GetComponent<BoxCollider2D>().enabled = false;
             if (!hasPlayed)
             {
+
+                door.GetComponent<DoorController>().OpenDoor();
                 drAudioSource.PlayOneShot(doorOpen);
                 hasPlayed = true;
             }
-
-            anim.Play("doorOpening");
+            //Here I want to make my door object play the animation to open the door, then switch to sprite
             Debug.Log(door.name + "Opened!");
         }
         if (playerController.isDraining == true)

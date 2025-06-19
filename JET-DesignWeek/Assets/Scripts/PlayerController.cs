@@ -330,18 +330,20 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "ChargePad")
         {
-            if (!cAudioSource.isPlaying)
+            cAudioSource.Play();
+           /* if (!cAudioSource.isPlaying)
             {
-                cAudioSource.Play();
-            }
+                
+            }*/
             isCharging = true;
         }
         if (collision.gameObject.tag == "DrainPad")
         {
-            if (!dAudioSource.isPlaying)
+            dAudioSource.Play();
+            /*if (!dAudioSource.isPlaying)
             {
-                dAudioSource.Play();
-            }
+               
+            }*/
             isDraining = true;
         }
 
