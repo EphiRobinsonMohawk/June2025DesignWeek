@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public Slider changeSlider;
 
 
+
     [Header("Player Things")]
     public AudioSource pAudioSource;
     public AudioSource cAudioSource;
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip charging;
     public AudioClip draining;
     public AudioClip powerUp;
+    private Coroutine stopAfterLoopCoroutine;
     public bool hasPlayed;
 
     //Declare variables for the Rigidbody2D, Animator and SpriteRenderer
@@ -330,12 +332,17 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "ChargePad")
         {
-            cAudioSource.Play();
-           /* if (!cAudioSource.isPlaying)
-            {
-                
-            }*/
+            if (!cAudioSource.isPlaying)
+                cAudioSource.Play();
+
             isCharging = true;
+
+            // Cancel any stop that was pending
+            if (stopAfterLoopCoroutine != null)
+            {
+                StopCoroutine(stopAfterLoopCoroutine);
+                stopAfterLoopCoroutine = null;
+            }
         }
         if (collision.gameObject.tag == "DrainPad")
         {
@@ -369,11 +376,13 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "ChargePad")
         {
-            if (cAudioSource.isPlaying)
-            {
-                cAudioSource.Stop();
-            }
+
             isCharging = false;
+            if (cAudioSource.isPlaying && stopAfterLoopCoroutine == null)
+            {
+                stopAfterLoopCoroutine = StartCoroutine(StopAfterCurrentLoop());
+            }
+
         }
         if (collision.gameObject.tag == "DrainPad")
         {
@@ -422,5 +431,11 @@ public class PlayerController : MonoBehaviour
     public void AddCharge()
     {
     chargeMeter += chargeAmmount;
+    }
+    private IEnumerator StopAfterCurrentLoop()
+    {
+        float timeRemaining = cAudioSource.clip.length - cAudioSource.time;
+        yield return new WaitForSeconds(timeRemaining);
+        cAudioSource.Stop();
     }
 }
