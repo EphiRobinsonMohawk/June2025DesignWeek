@@ -96,7 +96,8 @@ public class PlayerController : MonoBehaviour
         //Execute death code when charge is less than 1
         if (chargeMeter < 1)
         {
-            Death();
+            dead = true;
+            anim.Play("playerDeath");
         }
         //Add charge when player is on charging pad
         if (isCharging)
@@ -124,6 +125,11 @@ public class PlayerController : MonoBehaviour
         }
         changeSlider.value = chargeMeter * 0.01f;
 
+        if (chargeMeter > 100)
+        {
+            chargeMeter = 100;
+        }
+
 
         //Local float variable for input
         //Unity has a built-in Input system with default "axes"
@@ -140,9 +146,12 @@ public class PlayerController : MonoBehaviour
             HandleJump();   //Custom for jump management
 
         //If the player clicks the left mouse button, play the attack animation
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftShift))
         {
-            anim.SetTrigger("attack");  //Triggers are "play once and then stop"
+            if (!dead)
+            {
+                anim.SetTrigger("attack");  //Triggers are "play once and then stop"
+            }
         }
 
         //Scene switching demo
@@ -215,7 +224,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //If coyoteTime is still active, and the players hit the jump button
-        if (coyoteTime > 0 && Input.GetKeyDown(KeyCode.Space) && !dead)
+        if (coyoteTime > 0 && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && !dead)
         {
             //Add the jump value to the rigidbody2D velocity
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpHeight);
@@ -233,7 +242,7 @@ public class PlayerController : MonoBehaviour
         } 
         //If the rigidbody is going upward and the spacebar is not being pressed
         //i.e., it was pressed and released
-        else if (rb2d.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        else if (rb2d.velocity.y > 0 && !Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.W) && !Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb2d.velocity += Vector2.up * Physics2D.gravity
                 * (lowJumpMultiplier) * Time.deltaTime;

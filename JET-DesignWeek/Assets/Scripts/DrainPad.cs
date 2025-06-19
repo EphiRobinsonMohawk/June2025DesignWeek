@@ -6,6 +6,7 @@ public class DrainPad : MonoBehaviour
 {
     public float drainingSpeed;
     public float drained;
+    public float drainCap;
     public bool isDrained;
 
     public GameObject door;
@@ -13,7 +14,7 @@ public class DrainPad : MonoBehaviour
 
     void Update()
     {
-        if (drained >= 50)
+        if (drained >= drainCap)
         {
             isDrained = true;
             door.GetComponent<BoxCollider2D>().enabled = false;

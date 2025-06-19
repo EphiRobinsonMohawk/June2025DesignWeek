@@ -143,8 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244c3343258192b4f8bddc493ff9cd39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drainingSpeed: 4
+  drainingSpeed: 6
   drained: 0
+  drainCap: 50
   isDrained: 0
   door: {fileID: 0}
   playerController: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
