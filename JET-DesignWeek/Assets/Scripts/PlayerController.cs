@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
     public Slider changeSlider;
 
 
-
     [Header("Player Things")]
     public AudioSource pAudioSource;
     public AudioSource cAudioSource;
@@ -187,6 +186,7 @@ public class PlayerController : MonoBehaviour
             //or by the index number (0, 1, 2, etc.)
             SceneManager.LoadScene("Game");
         }
+        
     }
 
     void Movement(float hMovement)

@@ -3364,6 +3364,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music Man
       objectReference: {fileID: 0}
+    - target: {fileID: 8575503375602998060, guid: c5b4a64fe485b244f9d15c503e54cc70, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575503375602998060, guid: c5b4a64fe485b244f9d15c503e54cc70, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
