@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244c3343258192b4f8bddc493ff9cd39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drainingSpeed: 6
+  drainingSpeed: 12
   drained: 0
   drainCap: 50
   isDrained: 0
