@@ -20,6 +20,7 @@ public class BarScale : MonoBehaviour
     void Update()
     {
         currentValue = (drainPad.drained - ((doorNumber-1) * 50));
+        Debug.Log(currentValue + "d" + doorNumber);
         float normalized = Mathf.Clamp01(currentValue / maxValue);
         transform.localScale = new Vector3(originalScale.x * normalized, originalScale.y, originalScale.z);
     }

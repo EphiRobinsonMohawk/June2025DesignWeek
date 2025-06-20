@@ -115,7 +115,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 257
+        width: 394
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -134,9 +134,9 @@ TextureImporter:
       name: robotAttack_1
       rect:
         serializedVersion: 2
-        x: 257
+        x: 394
         y: 0
-        width: 257
+        width: 394
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -155,9 +155,9 @@ TextureImporter:
       name: robotAttack_2
       rect:
         serializedVersion: 2
-        x: 514
+        x: 788
         y: 0
-        width: 257
+        width: 394
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,9 +176,9 @@ TextureImporter:
       name: robotAttack_3
       rect:
         serializedVersion: 2
-        x: 771
+        x: 1182
         y: 0
-        width: 257
+        width: 394
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,9 +197,9 @@ TextureImporter:
       name: robotAttack_4
       rect:
         serializedVersion: 2
-        x: 1028
+        x: 1576
         y: 0
-        width: 257
+        width: 394
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
