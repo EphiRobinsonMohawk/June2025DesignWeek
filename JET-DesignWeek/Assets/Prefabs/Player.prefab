@@ -193,7 +193,7 @@ MonoBehaviour:
   chargeAmmount: 15
   chargeStart: 75
   isCharging: 0
-  chargeSpeed: 12
+  chargeSpeed: 36
   isDraining: 0
   drainSpeed: 3
   powerOn: 0

@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eAudioSource: {fileID: 6010333294672911636}
   enemyDie: {fileID: 8300000, guid: 8fdef514399fc4abea3f1b04ab3bd559, type: 3}
+  hasPlayed: 0
   battery: {fileID: 4018824961748094420, guid: 1b679e1178125b642acadc76b119fa91, type: 3}
   thisCollider: {fileID: 8499130133528416939}
   speed: 1.5
@@ -226,7 +227,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckerLength: 2
+  groundCheckerLength: 1.5
   atEdge: 0
   facingRight: 1
   currentState: 0
