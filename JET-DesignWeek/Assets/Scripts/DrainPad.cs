@@ -11,6 +11,7 @@ public class DrainPad : MonoBehaviour
     private bool hasPlayed;
     private bool hasSaid;
 
+    public BoxCollider2D drainZone;
     public GameObject door;
     public PlayerController playerController;
     public AudioSource drAudioSource;
@@ -28,6 +29,7 @@ public class DrainPad : MonoBehaviour
         {
             isDrained = true;
             door.GetComponent<BoxCollider2D>().enabled = false;
+            drainZone.enabled = false;
             if (!hasPlayed)
             {
 

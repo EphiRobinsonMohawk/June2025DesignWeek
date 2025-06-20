@@ -148,6 +148,7 @@ MonoBehaviour:
   drained: 0
   drainCap: 50
   isDrained: 0
+  drainZone: {fileID: 5781259508140504481}
   door: {fileID: 0}
   playerController: {fileID: 2285987938276001420, guid: 100abdda46a437d4c9895d338a64451f, type: 3}
   drAudioSource: {fileID: 6300422363703113799}
