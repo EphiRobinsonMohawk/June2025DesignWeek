@@ -9,6 +9,7 @@ public class DrainPad : MonoBehaviour
     public float drainCap;
     public bool isDrained;
     private bool hasPlayed;
+    private bool hasSaid;
 
     public GameObject door;
     public PlayerController playerController;
@@ -18,6 +19,7 @@ public class DrainPad : MonoBehaviour
 
     void Start()
     {
+        hasSaid = false;
         hasPlayed = false;   
     }
     void Update()
@@ -33,8 +35,12 @@ public class DrainPad : MonoBehaviour
                 drAudioSource.PlayOneShot(doorOpen);
                 hasPlayed = true;
             }
+            if (hasSaid == false)
+            {
+                Debug.Log(door.name + "Opened!");
+                hasSaid = true;
+            }
             //Here I want to make my door object play the animation to open the door, then switch to sprite
-            Debug.Log(door.name + "Opened!");
         }
         if (playerController.isDraining == true)
         {
