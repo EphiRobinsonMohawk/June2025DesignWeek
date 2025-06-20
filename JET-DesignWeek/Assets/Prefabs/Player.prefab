@@ -221,7 +221,7 @@ MonoBehaviour:
   startMoveSpeed: 5.5
   jumpHeight: 0
   startJumpHeight: 8.2
-  fallMultiplier: 5
+  fallMultiplier: 3
   lowJumpMultiplier: 3
   coyoteTimeMax: 0.25
   coyoteTime: 0
