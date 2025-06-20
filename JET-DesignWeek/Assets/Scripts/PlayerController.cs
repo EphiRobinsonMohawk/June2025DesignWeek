@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
             HandleJump();   //Custom for jump management
 
         //If the player clicks the left mouse button, play the attack animation
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (!dead)
             {
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
         {
             //Can reference the scene by name in quotes (string)
             //or by the index number (0, 1, 2, etc.)
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Game");
         }
     }
 
@@ -250,7 +250,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //If coyoteTime is still active, and the players hit the jump button
-        if (coyoteTime > 0 && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && !dead)
+        if (coyoteTime > 0 &&  Input.GetKeyDown(KeyCode.W))
         {
             pAudioSource.PlayOneShot(playerJump);
             //Add the jump value to the rigidbody2D velocity
@@ -269,7 +269,7 @@ public class PlayerController : MonoBehaviour
         } 
         //If the rigidbody is going upward and the spacebar is not being pressed
         //i.e., it was pressed and released
-        else if (rb2d.velocity.y > 0 && !Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.W) && !Input.GetKeyDown(KeyCode.UpArrow))
+        else if (rb2d.velocity.y > 0 && !Input.GetKey(KeyCode.W))
         {
             rb2d.velocity += Vector2.up * Physics2D.gravity
                 * (lowJumpMultiplier) * Time.deltaTime;
